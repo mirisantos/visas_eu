@@ -32,20 +32,97 @@ btnGuardar.addEventListener("click", () =>{
 
 function guardar(params){
     const transaction = database.transaction(["cita"],"readwrite")
-    const objStore= transaction.objectStore("cita")
-    let cita={
-        nombre: document.getElementById("nombre").value,
-        apellidos: document.getElementById("apellido").value,
-        fechaNacimiento: document.getElementById("fecha").value,
+    const objStore= transaction.objectStore("cita");
+let nombre = document.getElementById("nombre").value;
+let apellido = document.getElementById("apellido").value;
+let fechaNacimiento= document.getElementById("fechaNacimiento").value;
+let nacionalidad = document.getElementById("nacionalidad").value;
+let pasaporte = document.getElementById("pasaporte").value;
+let telefono = document.getElementById("telefono").value;
+let direccion = document.getElementById("direccion").value;
+let correo = document.getElementById("correo").value;
+let tipoVisa = document.getElementById("tipoVisa").value;
+let fechaCita = document.getElementById("fechaCita").value;
+let hora = document.getElementById("hora").value;
 
-        nacionalidad: document.getElementById("nacionalidad").value,
-        pasaporte: document.getElementById("pasaporte").value,
-        telefono: document.getElementById("telefono").value,
-        direccion: document.getElementById("direccion").value,
-        correo: document.getElementById("correo").value,
-        tipoVisa: document.getElementById("tipoVisa").value,
-        fecha: document.getElementById("fechas").value,
-        hora: document.getElementById("hora").value,
+if(nombre==''){
+    alert("Escribe tu nombre");
+    nombre.focus();
+    return;
+}
+
+if(apellido==''){
+    alert("Escribe tu apellido");
+    apellido.focus();
+    return;
+ }    
+
+ if(fechaNacimiento==''){
+    alert("Escribe tu fechaNacimiento");
+    fecha.focus();
+    return;
+ } 
+ 
+ if(nacionalidad==''){
+    alert("Escribe tu nacionalidad");
+    nacionalidad.focus();
+    return;
+ } 
+
+ if(pasaporte==''){
+    alert("Escribe tu pasaporte");
+    pasaporte.focus();
+    return;
+ } 
+
+ if(telefono==''){
+    alert("Escribe tu telefono");
+    telefono.focus();
+    return;
+ } 
+
+ if(direccion==''){
+    alert("Escribe tu direccion");
+    direccion.focus();
+    return;
+ } 
+
+ if(correo==''){
+    alert("Escribe tu correo");
+    correo.focus();
+    return;
+ } 
+
+ if(tipoVisa==''){
+    alert("Escribe tu tipoVisa");
+    tipoVisa.focus();
+    return;
+ } 
+
+ if(fechaCita==''){
+    alert("Escribe tus fechasCita");
+    fechaCita.focus();
+    return;
+ } 
+
+ if(hora==''){
+    alert("Escribe tu hora");
+    hora.focus();
+    return;
+ } 
+
+    let cita={
+        nombre: nombre,
+        apellidos: apellido,
+        fecha: fechaNacimiento,
+        nacionalidad: nacionalidad,
+        pasaporte: pasaporte,
+        telefono: telefono,
+        direccion: direccion,
+        correo: correo,
+        tipoVisa: tipoVisa,
+        fechaCita: fechaCita,
+        hora: hora
     
     };
 
@@ -54,7 +131,10 @@ function guardar(params){
     result.onsuccess = event => {
         console.log("Cita guardada")
         alert("Cita guardada");
+
+    document.getElementById('form').reset();
     }
+
     result.onerror = event => {
         console.log("Error al guardar")    
 }
@@ -79,3 +159,4 @@ connection.onupgradeneeded= event =>{
 
     console.log("BD Actualizada")
 }
+

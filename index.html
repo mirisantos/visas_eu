@@ -20,68 +20,68 @@
     
           <!--   Icon Section   -->
           <div class="row">
-            <form  id= "form" class="col s12">
+            <form  id= "form">
              
               <div class="row">
-                <div class="input-field col s3">
+                <div class="input-field col s12 m4">
                   <i class="material-icons prefix">account_circle</i>
                   <input id="nombre" name="nombre" type="text" class="validate">
                   <label for="nombre">Nombre</label>
                 </div>
-                <div class="input-field col s3">
+                <div class="input-field col s12 m4">
                   <i class="material-icons prefix">person</i>
                   <input id="apellido" type="text" class="validate">
                   <label for="apellido">Apellidos</label>
-
                 </div>
-                <div class="input-field col s3">
+                <div class="input-field col s12 m4">
                     <i class="material-icons prefix">perm_contact_calendar</i>
-                    <input id="fecha" type="tel" class="validate datepicker">
+                    <input id="fechaNacimiento" type="tel" class="validate datepicker">
                     <label for="fecha">Fecha de nacimiento</label>
-  
                   </div>
-                  <div class="input-field col s3">
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12 m4">
                     <i class="material-icons prefix">flag</i>
                     <input id="nacionalidad" type="text" class="validate">
                     <label for="nacionalidad">Nacionalidad</label>
-  
-                  </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s4">
+                </div>
+                <div class="input-field col s12 m4">
                   <i class="material-icons prefix">assignment_ind</i>
                   <input id="pasaporte" type="text" class="validate">
                   <label for="pasaporte">Pasaporte</label>
                 </div>
-                <div class="input-field col s4">
+                <div class="input-field col s12 m4">
                   <i class="material-icons prefix">phone</i>
                   <input id="telefono" type="tel" class="validate">
                   <label for="telefono">Teléfono</label>
                 </div>
-                <div class="input-field col s4">
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12 m4">
                     <i class="material-icons prefix">contacts</i>
                     <input id="direccion" type="text" class="validate">
                     <label for="direccion">Dirección</label>
-  
-                  </div>
               </div>
-              <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12 m4">
                   <i class="material-icons prefix">folder</i>
-                  <input id="correo" type="text" class="validate">
+                  <input id="correo" type="email" class="validate" required="required">
                   <label for="correo">Correo</label>
+                  <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
                 </div>
-                <div class="input-field col s6">
+                <div class="input-field col s12 m++++4">
                   <i class="material-icons prefix">person</i>
                   <input id="tipoVisa" type="text" class="validate">
-                  <label for="tipo de vis">Tipo de visa</label>
+                  <label for="tipo de tipoVisa">Tipo de visa</label>
                 </div>
               </div>
+
               <div class="row">
                 <div class="input-field col s6">
                   <i class="material-icons prefix">date_range</i>
-                  <input id="fechas" type="tel" class="validate datepicker">
-                  <label for="fechas">Fecha</label>
+                  <input id="fechaCita" type="tel" class="validate datepicker">
+                  <label for="fechas">Fechas</label>
                 </div>
                 <div class="input-field col s6">
                   <i class="material-icons prefix">access_alarm</i>
