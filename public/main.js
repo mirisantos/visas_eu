@@ -47,67 +47,56 @@ let hora = document.getElementById("hora").value;
 
 if(nombre==''){
     alert("Escribe tu nombre");
-    nombre.focus();
     return;
 }
 
 if(apellido==''){
     alert("Escribe tu apellido");
-    apellido.focus();
     return;
  }    
 
  if(fechaNacimiento==''){
     alert("Escribe tu fechaNacimiento");
-    fecha.focus();
     return;
  } 
  
  if(nacionalidad==''){
     alert("Escribe tu nacionalidad");
-    nacionalidad.focus();
     return;
  } 
 
  if(pasaporte==''){
     alert("Escribe tu pasaporte");
-    pasaporte.focus();
     return;
  } 
 
  if(telefono==''){
     alert("Escribe tu telefono");
-    telefono.focus();
     return;
  } 
 
  if(direccion==''){
     alert("Escribe tu direccion");
-    direccion.focus();
     return;
  } 
 
  if(correo==''){
     alert("Escribe tu correo");
-    correo.focus();
     return;
  } 
 
  if(tipoVisa==''){
     alert("Escribe tu tipoVisa");
-    tipoVisa.focus();
     return;
  } 
 
  if(fechaCita==''){
     alert("Escribe tus fechasCita");
-    fechaCita.focus();
     return;
  } 
 
  if(hora==''){
     alert("Escribe tu hora");
-    hora.focus();
     return;
  } 
 
