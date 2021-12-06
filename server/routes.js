@@ -15,9 +15,10 @@ const cita = {
 
 };
 //citas.push(cita)
-
-//res.json(cita)
+//console.log (citas)
+//res.json(citas)
 console.log (req.body);
+
 res.json(req.body);
 });
 

@@ -4,9 +4,14 @@
 let connection = indexedDB.open("Visas_2021", 1);
 let database;
 
+if ("serviceWorker"in navigator) {
+    navigator.serviceWorker.register("./sw.js")
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.datepicker');
     var instances = M.Datepicker.init(elems);
+
   });
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -15,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 document.addEventListener("DOMContentLoaded",()=>{
-    console.log("DOM cargado")
+  
 let btnGuardar = document.querySelector("#btnGuardar")
 let formulario = document.querySelector("#form");
 
@@ -31,8 +36,8 @@ btnGuardar.addEventListener("click", () =>{
 })
 
 function guardar(params){
-    const transaction = database.transaction(["cita"],"readwrite")
-    const objStore= transaction.objectStore("cita");
+  //  const transaction = database.transaction(["cita"],"readwrite")
+    //const objStore= transaction.objectStore("cita");
 let nombre = document.getElementById("nombre").value;
 let apellido = document.getElementById("apellido").value;
 let fechaNacimiento= document.getElementById("fechaNacimiento").value;
@@ -44,6 +49,7 @@ let correo = document.getElementById("correo").value;
 let tipoVisa = document.getElementById("tipoVisa").value;
 let fechaCita = document.getElementById("fechaCita").value;
 let hora = document.getElementById("hora").value;
+
 
 if(nombre==''){
     alert("Escribe tu nombre");
@@ -114,17 +120,23 @@ if(apellido==''){
         hora: hora
     };
 
-    console.log("cITA: ",cita);
-
+    //console.log("CITA: ",cita);
+    
+    /*let citaObjeto = JSON.stringify(cita)
     fetch("/api/enviarCita", {
         method: "post",
         headers: {
             "content-Type": "application/json"
         },
-        body: JSON.stringify(cita)
-    })
+        body: citaObjeto})
+    .then(res => res.json())    
+    //.then (data => console.log (data))   
+    .catch(err => { 
 
-    /*let result = objStore.add(cita);
+    });*/
+
+
+    let result = objStore.add(cita);
 
     result.onsuccess = event => {
         console.log("Cita guardada")
@@ -135,7 +147,7 @@ if(apellido==''){
 
     result.onerror = event => {
         console.log("Error al guardar")    
-    }*/
+    }
 }
 
 connection.onsuccess= event =>{
@@ -158,3 +170,14 @@ connection.onupgradeneeded= event =>{
     console.log("BD Actualizada")
 }
 
+ window.addEventListener("online", () =>{
+     console.log("En linea")
+
+     //leer y enviar las reservaciones a la api FETCH POST
+ })    
+ window.addEventListener("offline", () =>{
+     console.log("Sin conexion") 
+
+     //indexDB
+     //guardar las reservaciones offline
+})     
