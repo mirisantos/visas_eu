@@ -36,8 +36,8 @@ btnGuardar.addEventListener("click", () =>{
 })
 
 function guardar(params){
-  //  const transaction = database.transaction(["cita"],"readwrite")
-    //const objStore= transaction.objectStore("cita");
+   const transaction = database.transaction(["cita"],"readwrite")
+   const objStore= transaction.objectStore("cita");
 let nombre = document.getElementById("nombre").value;
 let apellido = document.getElementById("apellido").value;
 let fechaNacimiento= document.getElementById("fechaNacimiento").value;
@@ -122,8 +122,8 @@ if(apellido==''){
 
     //console.log("CITA: ",cita);
     
-    /*let citaObjeto = JSON.stringify(cita)
-    fetch("/api/enviarCita", {
+    let citaObjeto = JSON.stringify(cita)
+    /*fetch("/api/enviarCita", {
         method: "post",
         headers: {
             "content-Type": "application/json"
