@@ -18,3 +18,7 @@ app.use("/api" ,rutas);
 app.listen(process.env.PORT || 3000, () => {
     console.log("servidor corriendo en el puerto 3000")
 })
+
+
+
+
